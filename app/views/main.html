@@ -1,37 +1,29 @@
 <md-content layout="row" flex layout-align="center" layout-fill>
-    <div flex="90" class="content" ui-view>
+    <div flex-md="70" flex-xs="90" class="content" ui-view>
       <md-item ng-repeat="day in main.dailyWeather" class="item"
                ng-class="{ 'selected-item': $index == main.selectedDayIndex}">
-        <md-item-content class="user tile md-whiteframe-z1"
+        <md-item-content class="card item tile md-whiteframe-z1"
                          ng-class="{ 'selected md-whiteframe-z2': $index == main.selectedDayIndex}"
                          layout="column">
-          <div layout="row" layout-fill ng-click="main.selectUserIndex($index)" class="folded">
+          <div layout="row" layout-fill ng-click="main.selectUserIndex($index)" class="card__folded">
             <div class="md-tile-left">
-              <img ng-src="{{ day.weatherIcon }}" class="face">
+              <img ng-src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png" class="card__face" alt="{{day.weather[0].description}}" title="{{day.weather[0].description}}"/>
             </div>
             <div class="md-tile-content" layout="column" layout-align="center start">
-              <h3>{{ day.data.first + " " + day.data.last }}</h3>
-
-              <p ng-hide="$index == main.selectedDayIndex">
-                <span>some text</span>
-              </p>
+              <h3>{{day.dt_txt | moment: 'format': 'MMM DD, YYYY' }}</h3>
+            </div>
+            <div layout="column" layout-align="end center" class="card__temperature">
+            <p class="card__tile-temperature">
+              <span class="card__description">{{day.main.temp | temperature: 'F'}}</span>
+            </p>
             </div>
           </div>
           <md-divider layout-fill ng-show="$index == main.selectedDayIndex"></md-divider>
-          <div layout="column" layout-fill class="expanded">
-            <span>some text</span>
-            <br/>
-            <span>some text</span>
-            <br/>
-            <span>some text</span>
-            <br/>
-            <span>some text</span>
-            <br/>
-            <span>some text</span>
-            <br/>
-            <span>some text</span>
-            <br/>
-            <span>some text</span>
+          <div layout="column" layout-fill class="expanded card__inner-text">
+            <div class="card__description"><label class="card__label">Min Temp: </label><span class=" min-temp">{{day.main.temp_min | temperature: 'F'}}</span></div>
+            <div class="card__description"><label class="card__label">Max Temp: </label><span class="max-temp">{{day.main.temp_max | temperature: 'F'}}</span></div>
+            <div class="card__description"><label class="card__label">Humidity: </label><span class="humidity">{{day.main.humidity}}</span></div>
+            <div class="card__description"><label class="card__label">Description: </label><span class="description">{{day.weather[0].description}}</span></div>
           </div>
         </md-item-content>
         <md-divider class="divider-inset" ng-if="!$last"></md-divider>

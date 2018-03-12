@@ -108,13 +108,13 @@ md-content{
     }
   }
 
-  .tile{
+  .tile {
     .folded{
       cursor: pointer;
-
+      position: relative;
     }
   }
-  .user {
+  .card {
     background-color: white;
     transition: all 500ms;
 
@@ -141,6 +141,7 @@ md-content{
         &, & > * {
           max-height: 700px;
           opacity: 1;
+          display: inline;
         }
 
         .md-label {
@@ -163,14 +164,35 @@ md-content{
       .split {
         padding: 10px;
       }
+      & .card__description {
+        width: 40%;
+        padding: 20px;
+        display: inline-block;
+      }
     }
 
-    .face {
+    &__face {
       border-radius: 30px;
       border: 1px solid #ddd;
       width: 48px;
       height: 48px;
       margin: 16px;
+    }
+
+    &__inner-text {
+      margin: 0 auto;
+    }
+
+    &__temperature {
+      margin: 20px 10px;
+      @media (min-width: 600px) {
+        margin: 4% 10%;
+      }
+    }
+
+    &__tile-temperature {
+      margin: 10px;
+      font-size: 24px;
     }
   }
 }

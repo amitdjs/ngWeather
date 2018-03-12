@@ -26,4 +26,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
-  });
+  })
+.constant('WEATHER_API_URL', 'http://api.openweathermap.org/');

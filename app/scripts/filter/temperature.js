@@ -7,10 +7,10 @@
  */
 
 angular.module('prudentialApp')
-.filter('formatTemperature', [
+.filter('temperature', [
   function() {
     return function(input, scale, label) {
-      var value = parseInt(input, 10),
+      let value = parseInt(input, 10),
         convertedValue;
 
       if (isNaN(value)) throw new Error('Input is not a number');
@@ -23,7 +23,7 @@ angular.module('prudentialApp')
         throw new Error('Not a valid scale');
       }
 
-      return label ? convertedValue += '\u00B0' : convertedValue;
+      return (convertedValue + '\u00B0' + ' ' + scale);
     };
   }
 ]);

@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc function
- * @name prudentialApp.factory:restCallFactory
+ * @name prudentialApp.filter:dateFilter
  * @description wrapper for all rest callss
  */
 
