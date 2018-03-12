@@ -37,6 +37,6 @@
     "hammerjs": "^2.0.8"
   },
   "scripts": {
-    "postinstall": "bower install && grunt build"
+    "postinstall": "grunt build"
   }
 }
