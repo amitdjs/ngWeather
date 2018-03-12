@@ -9,7 +9,7 @@
    */
   angular.module('prudentialApp')
   .controller('MainCtrl', function (RestCallFactory) {
-    let that = this, qm = {
+    var that = this, qm = {
       appid: 'cf17d36364a790526fade8fb83873eaf',
       units: 'metric',
       q: 'London,uk',
@@ -27,8 +27,8 @@
         return;
       }
       //assuming the response to be for 5 days. Each day has equal number of entries
-      let separation = parseInt(data.cnt/5) || 1;
-      for(let i = 0; i<data.cnt; i+=separation) {
+      var separation = parseInt(data.cnt/5) || 1;
+      for(var i = 0; i<data.cnt; i+=separation) {
         //TODO: refactor this
         that.dailyWeather.push(data.list[i]);
       }

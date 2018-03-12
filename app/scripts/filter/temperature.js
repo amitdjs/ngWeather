@@ -10,7 +10,7 @@ angular.module('prudentialApp')
 .filter('temperature', [
   function() {
     return function(input, scale) {
-      let value = parseInt(input, 10),
+      var value = parseInt(input, 10),
         convertedValue;
 
       if (isNaN(value)) {throw new Error('Input is not a number');}
