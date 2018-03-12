@@ -9,11 +9,11 @@
 angular.module('prudentialApp')
 .filter('temperature', [
   function() {
-    return function(input, scale, label) {
+    return function(input, scale) {
       let value = parseInt(input, 10),
         convertedValue;
 
-      if (isNaN(value)) throw new Error('Input is not a number');
+      if (isNaN(value)) {throw new Error('Input is not a number');}
 
       if (scale === 'F') {
         convertedValue = Math.round(value * 9.0 / 5.0 + 32);
