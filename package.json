@@ -35,5 +35,8 @@
     "time-grunt": "^1.0.0",
     "jshint-stylish": "^1.0.0",
     "hammerjs": "^2.0.8"
+  },
+  "scripts": {
+    "postinstall": "bower install && grunt build"
   }
 }
