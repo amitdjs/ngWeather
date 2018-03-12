@@ -11,6 +11,7 @@
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
     "grunt-angular-templates": "^0.5.7",
+    "grunt-build-control": "^0.7.1",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-compass": "^1.0.0",
@@ -36,7 +37,6 @@
     "hammerjs": "^2.0.8",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
-    "time-grunt": "^1.0.0",
-    "grunt-build-control": "^0.7.1"
+    "time-grunt": "^1.0.0"
   }
 }

@@ -486,6 +486,12 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+    heroku: {
+      options: {
+        remote: 'git@heroku.com:pru-ng-weather.git', ///\INSERT App name
+        branch: 'master'
+      }
     }
   });
 
