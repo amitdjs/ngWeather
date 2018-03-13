@@ -27,4 +27,4 @@ angular
         redirectTo: '/'
       });
   })
-.constant('WEATHER_API_URL', 'http://api.openweathermap.org/');
+.constant('WEATHER_API_URL', 'https://api.openweathermap.org/');
