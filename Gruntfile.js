@@ -489,7 +489,7 @@ module.exports = function (grunt) {
     },
     heroku: {
       options: {
-        remote: 'git@heroku.com:pru-ng-weather.git', ///\INSERT App name
+        remote: 'git@heroku.com:pru-ng-weather.git',
         branch: 'master'
       }
     }
