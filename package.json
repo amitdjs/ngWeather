@@ -7,8 +7,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "node server/server.js",
-    "postinstall": "grunt build"
+    "start": "node server/server.js"
   },
   "main": "server/server.js",
   "dependencies": {
