@@ -6,6 +6,11 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "scripts": {
+    "start": "node server/server.js",
+    "postinstall": "grunt build"
+  },
+  "main": "server/server.js",
   "dependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
