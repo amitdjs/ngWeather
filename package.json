@@ -2,13 +2,19 @@
   "name": "prudential",
   "private": true,
   "devDependencies": {
+    "jasmine-core": "^3.1.0",
+    "karma": "^2.0.0",
+    "karma-jasmine": "^1.1.1",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantomjs-prebuilt": "^2.1.16"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
     "start": "node server.js",
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies."
+    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
+    "test": "karma start test\\karma.conf.js"
   },
   "main": "server.js",
   "dependencies": {
