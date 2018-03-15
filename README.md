@@ -14,12 +14,12 @@ To redeploy open terminal and enter `firebase deploy` . (make sure you are logge
 
 
 ## Testing
-Test cases are not included as part of this release.
+
 Running `grunt test` will run the unit tests with karma.
+Please run `npm install` if there's an error in console.
 
 
 ## Future Enhancements
 This is a minimal implementation and has a margin for improvement. In the next releases, we can:
 1. revamp design for better UX. (colors, animation, layout)
 2. have a input field for city to check weather in
-3. Include unit test cases 
