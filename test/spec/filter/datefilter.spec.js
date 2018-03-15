@@ -1,17 +1,26 @@
-'use strict';
+describe('Filter: dateFilter', function () {
 
-/**
- * @ngdoc function
- * @name prudentialApp.filter:dateFilter
- * @description wrapper for all rest callss
- */
+  'use strict';
 
-angular.module('prudentialApp')
-.filter('moment', function () {
-  return function (input, momentFn /*, param1, param2, ...param n */) {
-    var args = Array.prototype.slice.call(arguments, 2),
-      moment = moment || window.moment,
-      momentObj = moment(input);
-    return momentObj[momentFn].apply(momentObj, args);
-  };
+  var $filter;
+
+  beforeEach(module('prudentialApp'));
+
+  beforeEach(inject(function (_$filter_) {
+    $filter = _$filter_;
+  }));
+
+  it('should return date in time format as passed', function () {
+    var filterTime = $filter('moment');
+    expect(filterTime('2018-03-15 06:00:00', 'format', 'MMM DD, YYYY')).toEqual('Mar 15, 2018');
+  });
+
+  it('should return date andtime in time format as passed', function () {
+    var filterTime = $filter('moment'),
+    time = new Date(),
+    expectedDateTime = ('0' + time.getDate()).slice(-2) + '/' + ('0' +
+      (time.getMonth()+1)).slice(-2) + '/'  +
+      time.getFullYear() +' ' + ('0' + (time.getHours())).slice(-2) + ':' + ('0' + (time.getMinutes())).slice(-2);;
+    expect(filterTime(time, 'format', 'DD/MM/YYYY HH:mm')).toEqual(expectedDateTime);
+  });
 });

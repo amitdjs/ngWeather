@@ -17,7 +17,18 @@
     };
     that.dailyWeather = [];
 
+    that.selectedDayIndex = undefined;
+    that.selectUserIndex = function (index) {
+      if (that.selectedDayIndex !== index) {
+        that.selectedDayIndex = index;
+      }
+      else {
+        that.selectedDayIndex = undefined;
+      }
+    };
+
     function handleError(response) {
+      that.dailyWeather = [];
       console.log(response);
     }
 
@@ -32,19 +43,9 @@
         //TODO: refactor this
         that.dailyWeather.push(data.list[i]);
       }
-      console.log(that.dailyWeather);
       that.selectUserIndex(0);
     }
 
     RestCallFactory.get('data/2.5/forecast', qm).then(handleSuccess, handleError);
 
-    that.selectedDayIndex = undefined;
-    that.selectUserIndex = function (index) {
-      if (that.selectedDayIndex !== index) {
-        that.selectedDayIndex = index;
-      }
-      else {
-        that.selectedDayIndex = undefined;
-      }
-    };
   });
